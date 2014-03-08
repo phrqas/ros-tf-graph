@@ -1,0 +1,23 @@
+#	This file is read by ros_tf_graph/tf_broadcaster in order to determine
+#	which transforms should be added to the tf tree. It does so by 
+#	calling the serivce advertised by ros_tf_graph/tf_finder, which actively 
+#	looks for a path between coordinate frames in order to connect them.
+#
+#	The syntax is as follows:
+#
+#	# denotes a comment line
+#
+#	1st column: src_frame (where measurements are generated, child_id)
+#	2nd column: dest_frame (where measurements should be converted to, frame_id)
+#
+#/usb_cam_1	/usb_cam_0
+#/usb_cam_2	/usb_cam_1
+#/usb_cam_3	/usb_cam_2
+#/usb_cam_0	/world
+#
+#/usb_cam_0	/base
+#/usb_cam_1	/usb_cam_0
+#/usb_cam_2	/usb_cam_0
+#/usb_cam_3	/usb_cam_0
+/kinect0_link	/base
+
