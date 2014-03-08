@@ -13,7 +13,7 @@ Extension of the ROS tf graph that allows calibration between sensors using tria
 
   * Polling tf_finder: 
     
-    rosrun ros_tf_graph tf_broadcaster.py b1 -f <path to file where sensor frames are listed> -r <path to where the calibration file should be recorded>
+    rosrun ros_tf_graph tf_broadcaster.py b1 -f sensor_frames_file -r calibration_file
 
   * Broadcasting transforms: 
 
