@@ -3,19 +3,21 @@ ros-tf-graph
 
 Extension of the ROS tf graph that allows calibration between sensors using triangulation.
 
-#Quick overview
+# Quick overview
 
 * tf_finder: listens to the messages in the /tf topic and records a graph of all received transforms. Also provides a service that finds transforms between frames (including triangulated ones) using Breadth-First Serch or says that no such transforms exists. Quick help is available with the -h option. You might want to invoke it like this
 
-    rosrun mers_tf tf_finder.py -b
+    rosrun ros_tf_graph tf_finder.py -b
 
 * tf_broadcaster: serves two purposes: I) Reads a configuration file containing a list of desired transforms (see sensor_frames.txt) and polls tf_finder to get the transforms. Once it's done, writes a pickle file with all transforms found. II) loads a pickle file containing transforms and broadcasts them.
 
-** I) Polling tf_finder: 
+  * Polling tf_finder: 
     
-    rosrun mers_tf tf_broadcaster.py b1 -f <path to file where sensor frames are listed> -r <path to where the calibration file should be recorded>
+    rosrun ros_tf_graph tf_broadcaster.py b1 -f <path to file where sensor frames are listed> -r <path to where the calibration file should be recorded>
 
-** II) Broadcasting transforms: rosrun mers_tf tf_broadcaster.py b1 -l <path to where the calibration file was recorded>
+  * Broadcasting transforms: 
+
+    rosrun ros_tf_graph tf_broadcaster.py b1 -l <path to where the calibration file was recorded>
 
 # Troubleshooting:
 
