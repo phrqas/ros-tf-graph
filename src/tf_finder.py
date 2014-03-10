@@ -23,7 +23,7 @@
 import roslib; roslib.load_manifest('ros_tf_graph')
 import rospy; import tf
 from tf.msg import tfMessage
-from mers_srvs.srv import CoordinateTransform
+from ros_tf_graph.srv import CoordinateTransform
 from geometry_msgs.msg import TransformStamped
 from geometry_msgs.msg import Vector3
 from geometry_msgs.msg import Quaternion
